@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TimesApiDemo</string>
+    <string name="most_viewed_articles">MostViewed Articles</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loading_dialog_width">100dp</dimen>
+    <dimen name="loading_dialog_height">100dp</dimen>
+    <dimen name="unit_15_dp">15dp</dimen>
+    <dimen name="num_10dp">10dp</dimen>
+    <dimen name="num_20dp">20dp</dimen>
+    <dimen name="num_5dp">5dp</dimen>
+
+    <dimen name="num_2dp">2dp</dimen>
+</resources>
