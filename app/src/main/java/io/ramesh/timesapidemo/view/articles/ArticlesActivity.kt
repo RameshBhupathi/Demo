@@ -2,8 +2,9 @@ package io.ramesh.timesapidemo.view.articles
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,12 +34,15 @@ class ArticlesActivity : BaseActivity(),ArticleItemCallback {
 
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(ArticlesViewModel::class.java)
         binding.rvArticles.setLayoutManager(LinearLayoutManager(this))
+        setTitle(getString(R.string.most_viewed_articles))
         loadArticles()
         showArticles()
     }
 
     fun loadArticles() {
-        viewModel.getMostViewedArticles(1).observe(this, Observer {
+        binding.pbArticles.visibility=VISIBLE
+        viewModel.getMostViewedArticles(1).observe(this, androidx.lifecycle.Observer {
+            binding.pbArticles.visibility=GONE
             if (it.status) {
                 Timber.d("size " + ((it.data) as MostViewedArticlesResponse).results.size)
                 viewModel.articles.value = ((it.data) as MostViewedArticlesResponse).results
@@ -52,8 +56,8 @@ class ArticlesActivity : BaseActivity(),ArticleItemCallback {
     }
 
     private fun showArticles() {
-        viewModel.articles.observe(this, Observer {
-            articlesAdapter = ArticlesAdapter(it,this)
+        viewModel.articles.observe(this, androidx.lifecycle.Observer {
+            articlesAdapter = ArticlesAdapter(it, this)
             binding.rvArticles.adapter = articlesAdapter
         })
     }
