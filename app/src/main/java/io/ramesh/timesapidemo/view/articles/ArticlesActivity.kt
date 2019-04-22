@@ -1,7 +1,11 @@
 package io.ramesh.timesapidemo.view.articles
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.databinding.DataBindingUtil
@@ -40,18 +44,24 @@ class ArticlesActivity : BaseActivity(),ArticleItemCallback {
     }
 
     fun loadArticles() {
-        binding.pbArticles.visibility=VISIBLE
-        viewModel.getMostViewedArticles(1).observe(this, androidx.lifecycle.Observer {
-            binding.pbArticles.visibility=GONE
-            if (it.status) {
-                Timber.d("size " + ((it.data) as MostViewedArticlesResponse).results.size)
-                viewModel.articles.value = ((it.data) as MostViewedArticlesResponse).results
-                showArticles()
-            } else {
-                showToastMessage(it.message)
-            }
+        if(isNetworkAvailable(this)) {
+            binding.tvInfo.visibility=GONE
+            binding.pbArticles.visibility= View.VISIBLE
+            viewModel.getMostViewedArticles(1).observe(this, androidx.lifecycle.Observer {
+                binding.pbArticles.visibility = GONE
+                if (it.status) {
+                    Timber.d("size " + ((it.data) as MostViewedArticlesResponse).results.size)
+                    viewModel.articles.value = ((it.data) as MostViewedArticlesResponse).results
+                    showArticles()
+                } else {
+                    showToastMessage(it.message)
+                }
 
-        })
+            })
+        }
+        else{
+           binding.tvInfo.visibility=VISIBLE
+        }
 
     }
 
@@ -67,6 +77,13 @@ class ArticlesActivity : BaseActivity(),ArticleItemCallback {
         articleDetailsIntent.putExtra(AppConstansts.ARTICLE_DETAILS_URL,url)
         articleDetailsIntent.putExtra(AppConstansts.ARTICLE_ADX_KEYWORD,keyword)
         startActivity(articleDetailsIntent)
+    }
+
+    fun isNetworkAvailable(context: Context): Boolean {
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        var activeNetworkInfo: NetworkInfo? = null
+        activeNetworkInfo = cm.activeNetworkInfo
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting
     }
 
 }
