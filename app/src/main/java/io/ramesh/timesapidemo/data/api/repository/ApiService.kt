@@ -1,6 +1,6 @@
-package io.ramesh.timesapidemo.api.repository
+package io.ramesh.timesapidemo.data.api.repository
 
-import io.ramesh.timesapidemo.api.response.MostViewedArticlesResponse
+import io.ramesh.timesapidemo.data.api.response.MostViewedArticlesResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

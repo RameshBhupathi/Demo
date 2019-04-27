@@ -1,8 +1,8 @@
-package io.ramesh.timesapidemo.api.repository
+package io.ramesh.timesapidemo.data.api.repository
 
 import androidx.lifecycle.MutableLiveData
-import io.ramesh.timesapidemo.api.Resource
-import io.ramesh.timesapidemo.api.response.MostViewedArticlesResponse
+import io.ramesh.timesapidemo.data.api.Resource
+import io.ramesh.timesapidemo.data.api.response.MostViewedArticlesResponse
 import retrofit2.Call
 import retrofit2.Response
 import javax.inject.Inject

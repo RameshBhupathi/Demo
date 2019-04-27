@@ -70,6 +70,12 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger_version"
 
+
+    //ROOM
+    implementation "androidx.room:room-runtime:$rootProject.room_version"
+    kapt "androidx.room:room-compiler:$rootProject.room_version" // For Kotlin use kapt instead of annotationProcessor
+
+
     implementation "org.jetbrains.kotlin:kotlin-reflect:$rootProject.ext.kotlin_version"
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'

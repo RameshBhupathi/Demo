@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.ramesh.timesapidemo.GlideApp
 import io.ramesh.timesapidemo.R
-import io.ramesh.timesapidemo.api.model.Article
+import io.ramesh.timesapidemo.data.api.model.Article
 import io.ramesh.timesapidemo.databinding.ArticleItemBinding
 import timber.log.Timber
 

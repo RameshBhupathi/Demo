@@ -1,6 +1,6 @@
-package io.ramesh.timesapidemo.api.response
+package io.ramesh.timesapidemo.data.api.response
 
-import io.ramesh.timesapidemo.api.model.Article
+import io.ramesh.timesapidemo.data.api.model.Article
 
 
 /**

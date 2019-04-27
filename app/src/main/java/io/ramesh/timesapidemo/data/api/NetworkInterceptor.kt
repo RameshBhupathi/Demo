@@ -1,4 +1,4 @@
-package io.ramesh.timesapidemo.api
+package io.ramesh.timesapidemo.data.api
 
 import io.ramesh.timesapidemo.AppConstansts.Companion.API_KEY
 import io.ramesh.timesapidemo.MyApplication

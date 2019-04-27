@@ -9,8 +9,8 @@ import io.ramesh.timesapidemo.AppConstansts.Companion.READ_TIMEOUT
 import io.ramesh.timesapidemo.AppConstansts.Companion.WRITE_TIMEOUT
 import io.ramesh.timesapidemo.BuildConfig
 import io.ramesh.timesapidemo.MyApplication
-import io.ramesh.timesapidemo.api.NetworkInterceptor
-import io.ramesh.timesapidemo.api.repository.ApiService
+import io.ramesh.timesapidemo.data.api.NetworkInterceptor
+import io.ramesh.timesapidemo.data.api.repository.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

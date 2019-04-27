@@ -54,7 +54,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginTop="@dimen/num_5dp"
                     android:layout_marginLeft="@dimen/num_5dp"
-                    tools:text="@tools:sample/loremeeee  loreeeee qweerrrrr"
+                    tools:text="@tools:sample/loremeeeeloreeeee qweerrrrr"
                     android:textStyle="bold"
                     android:typeface="sans"/>
 

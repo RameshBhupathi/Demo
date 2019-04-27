@@ -1,4 +1,4 @@
-package io.ramesh.timesapidemo.api
+package io.ramesh.timesapidemo.data.api
 
 
 /**

@@ -1,7 +1,7 @@
 package io.ramesh.timesapidemo.view.articles_details
 
 import androidx.lifecycle.ViewModel
-import io.ramesh.timesapidemo.api.repository.ProjectRepository
+import io.ramesh.timesapidemo.data.api.repository.ProjectRepository
 import javax.inject.Inject
 
 

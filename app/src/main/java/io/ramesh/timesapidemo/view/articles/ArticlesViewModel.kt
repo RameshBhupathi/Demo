@@ -2,9 +2,9 @@ package io.ramesh.timesapidemo.view.articles
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import io.ramesh.timesapidemo.api.Resource
-import io.ramesh.timesapidemo.api.model.Article
-import io.ramesh.timesapidemo.api.repository.ProjectRepository
+import io.ramesh.timesapidemo.data.api.Resource
+import io.ramesh.timesapidemo.data.api.model.Article
+import io.ramesh.timesapidemo.data.api.repository.ProjectRepository
 import javax.inject.Inject
 
 

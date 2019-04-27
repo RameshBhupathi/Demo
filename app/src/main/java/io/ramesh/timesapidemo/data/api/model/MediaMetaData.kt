@@ -1,4 +1,4 @@
-package io.ramesh.timesapidemo.api.model
+package io.ramesh.timesapidemo.data.api.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.ramesh.timesapidemo.AppConstansts
 import io.ramesh.timesapidemo.R
-import io.ramesh.timesapidemo.api.response.MostViewedArticlesResponse
+import io.ramesh.timesapidemo.data.api.response.MostViewedArticlesResponse
 import io.ramesh.timesapidemo.databinding.ActivityArticlesBinding
 import io.ramesh.timesapidemo.view.articles_details.ArticleDetailsActivity
 import io.ramesh.timesapidemo.view.base.BaseActivity
