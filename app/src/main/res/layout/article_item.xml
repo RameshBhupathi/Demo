@@ -32,15 +32,14 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv_article"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/num_75dp"
+                    android:layout_height="@dimen/num_75dp"
                     android:layout_gravity="top"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_margin="10dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/ic_newspaper"
-                app:tint="@color/colorPrimary"/>
+                    />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -53,7 +52,7 @@
                     app:layout_constraintLeft_toRightOf="@+id/iv_article"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
+                    android:layout_marginTop="@dimen/num_5dp"
                     android:layout_marginLeft="@dimen/num_5dp"
                     tools:text="@tools:sample/loremeeee  loreeeee qweerrrrr"
                     android:textStyle="bold"

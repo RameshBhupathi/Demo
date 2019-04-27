@@ -6,8 +6,8 @@ package io.ramesh.timesapidemo.api.model
  */
 data class Article(
     var id: Long, var title: String, var byline: String,
-    var published_date: String, var url: String,var adx_keywords :String
-
+    var published_date: String, var url: String, var adx_keywords: String,
+    var media: List<Media>
 ) {
 
 }

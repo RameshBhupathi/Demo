@@ -67,7 +67,7 @@ class ArticlesActivity : BaseActivity(),ArticleItemCallback {
 
     private fun showArticles() {
         viewModel.articles.observe(this, androidx.lifecycle.Observer {
-            articlesAdapter = ArticlesAdapter(it, this)
+            articlesAdapter = ArticlesAdapter(ArticlesActivity@this,it, this)
             binding.rvArticles.adapter = articlesAdapter
         })
     }
