@@ -17,5 +17,7 @@ class AppConstansts {
 
         const val ARTICLE_DETAILS_URL="article_url"
         const val ARTICLE_ADX_KEYWORD="adx_keyword"
+
+        const val DATABASE_NAME="articles.db"
     }
 }

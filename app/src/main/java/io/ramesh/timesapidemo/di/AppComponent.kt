@@ -8,6 +8,7 @@ import io.ramesh.timesapidemo.MyApplication
 import io.ramesh.timesapidemo.di.modules.ActivityModule
 import io.ramesh.timesapidemo.di.modules.AppModule
 import io.ramesh.timesapidemo.di.modules.NetworkModule
+import io.ramesh.timesapidemo.di.modules.RoomModule
 import javax.inject.Singleton
 
 
@@ -19,6 +20,7 @@ import javax.inject.Singleton
     modules = [AndroidSupportInjectionModule::class,
         AppModule::class,
         NetworkModule::class,
+        RoomModule::class,
         ActivityModule::class
      ]
 )

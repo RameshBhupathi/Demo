@@ -7,5 +7,5 @@ package io.ramesh.timesapidemo.view.articles
 
 interface ArticleItemCallback{
 
-    fun showArticleDetails(url :String,keyword :String)
+    fun showArticleDetails(url :String?,keyword :String)
 }

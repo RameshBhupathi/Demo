@@ -76,6 +76,9 @@ dependencies {
     kapt "androidx.room:room-compiler:$rootProject.room_version" // For Kotlin use kapt instead of annotationProcessor
 
 
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
+
     implementation "org.jetbrains.kotlin:kotlin-reflect:$rootProject.ext.kotlin_version"
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'

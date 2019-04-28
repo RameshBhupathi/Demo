@@ -17,7 +17,7 @@ import timber.log.Timber
  */
 
 
-class ArticlesAdapter(var context: Context, var articles: MutableList<Article>, var callback: ArticleItemCallback) :
+class ArticlesAdapter(var context: Context, var articles: MutableList<Article>?, var callback: ArticleItemCallback) :
     RecyclerView.Adapter<ArticlesAdapter.ArticlesViewHolder>() {
 
 
@@ -32,28 +32,28 @@ class ArticlesAdapter(var context: Context, var articles: MutableList<Article>, 
 
     override fun getItemCount(): Int {
 
-        return articles.size
+        return articles?.size ?: 0
     }
 
     override fun onBindViewHolder(holder: ArticlesViewHolder, position: Int) {
 
-        val article = articles.get(position)
+        val article = articles?.get(position)
         holder.binding.article = article
 
 
         holder.binding.root.setOnClickListener {
-            callback.showArticleDetails(article.url, article.adx_keywords.split(";")[0])
+            callback.showArticleDetails(article?.url, article?.adx_keywords!!.split(";")[0])
         }
 
-        GlideApp.with(context).load(
-            article.media.get(0).mediaMetadata.get(0).url
-        ).placeholder(R.drawable.ic_newspaper)
-            .error(R.drawable.ic_newspaper)
-            .into(holder.binding.ivArticle)
+          GlideApp.with(context).load(
+              article?.media?.get(0)?.mediaMetadata?.get(0)?.url
+          ).placeholder(R.drawable.ic_newspaper)
+              .error(R.drawable.ic_newspaper)
+              .into(holder.binding.ivArticle)
 
-        Timber.d(
-            "" + article.media.get(0).mediaMetadata.get(0).url
-        );
+          Timber.d(
+              "" + article?.media?.get(0)?.mediaMetadata?.get(0)?.url
+          );
     }
 
     class ArticlesViewHolder(articlesBinding: ArticleItemBinding) : RecyclerView.ViewHolder(articlesBinding.root) {

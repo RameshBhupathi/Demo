@@ -1,6 +1,5 @@
 package io.ramesh.timesapidemo.data.db.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -13,12 +12,19 @@ import io.ramesh.timesapidemo.data.api.model.Article
  */
 @Dao
 interface ArticlesDao {
-    @Query("SELECT * FROM Article")
-    fun getAllArticles(): LiveData<List<Article>>
+    @Query("SELECT * FROM articles")
+    fun getAllArticles(): List<Article>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertArticles(articles: List<Article>)
 
-    @Query("DELETE FROM Article")
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertArticle(articles: Article)
+
+
+    @Query("DELETE FROM articles")
     fun clearArticles()
+
+
 }

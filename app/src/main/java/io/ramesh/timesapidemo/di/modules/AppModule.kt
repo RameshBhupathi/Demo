@@ -18,4 +18,5 @@ abstract class AppModule {
     @Singleton
     internal abstract fun bindContext(application: MyApplication): Context
 
+
 }
