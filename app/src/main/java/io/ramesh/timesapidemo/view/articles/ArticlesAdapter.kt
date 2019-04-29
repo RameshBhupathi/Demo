@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import io.ramesh.timesapidemo.GlideApp
 import io.ramesh.timesapidemo.R
 import io.ramesh.timesapidemo.data.api.model.Article
@@ -49,6 +50,7 @@ class ArticlesAdapter(var context: Context, var articles: MutableList<Article>?,
               article?.media?.get(0)?.mediaMetadata?.get(0)?.url
           ).placeholder(R.drawable.ic_newspaper)
               .error(R.drawable.ic_newspaper)
+              .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
               .into(holder.binding.ivArticle)
 
           Timber.d(

@@ -47,8 +47,10 @@ class ArticlesActivity : BaseActivity(), ArticleItemCallback {
         viewModel.getMostViewedArticles(1).observe(this, androidx.lifecycle.Observer {
             binding.pbArticles.visibility = GONE
             if (it.status) {
-                viewModel.articles.value = (it.data) as MutableList<Article>
-                showArticles()
+                if(it.data!=null) {
+                    viewModel.articles.value = (it.data) as MutableList<Article>
+                    showArticles()
+                }
             } else {
                 showToastMessage(it.message)
             }
